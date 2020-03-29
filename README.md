@@ -22,5 +22,73 @@ You can see your website on http://127.0.0.1:5000/
 * **Transaction Record** - contain transaction detail includes prices, time, games bought
 * **Top 10 Sold Games** - we list the top 10 sold games based on real-time data, once people buy games, it will actually affect the rank
 
+## Demonstration
+![DEMO](https://github.com/Jefflin413/Game-Shop/blob/master/pictures/game%20shop.gif "DEMO.gif")  
+More pictures can be seen in [pictures](https://github.com/Jefflin413/Game-Shop/tree/master/pictures "pictures")
+
+## Enity, relation and constraint design behind the database 
+### **ER-diagram**  
+![ERdiagram](https://github.com/Jefflin413/Game-Shop/blob/master/pictures/ER-Diagram%203.png "ERdiagram.png")  
+
+
+### **Description of entities, attributes and relationship sets**  
+**PLAYER**: user of the website.  
+　account: unique id that every player should have one.  
+　email: unique email address and cannot be null. It is a candidate key.  
+　name: player’s preferred name.  
+　age: the age of player, which must be between 0 and 150.  
+　country: the country player lives in, which can only be one country. The games content may be different based on location.  
+
+**TRANSACTION**: an order that records transaction time, amount and payment.  
+　tid: the unique identification number of a transaction entity.  
+　price: how much money is involved in this transaction, which must be >= 0 (free games are possible).  
+　date: the time of when transaction validated.  
+　payment: the way that player used to pay for the merchandise.  
+
+**GAME**: PC game.    
+　gname: name of the game.  
+　description: context about game content.  
+　genre: the type of the game, can only be one.  
+　price: how much does it cost to buy this game, which must be >= 0 (free games are possible).  
+　date: the time when the game was published. Could be in the future.  
+
+**PRODUCER**: the person who takes responsibility for the production of game.  
+　pname: producer’s name.  
+　nation: the nationality of the producer, which can only be one, if there are multiple nationalities, we will pick the country he mostly works in.  
+　age: the age of the producer, which must be between 0 and 150.  
+
+**COMPOSER**: the person who make music for the game.  
+　cname: name of the composer.
+
+**MUSIC_GENRE**: the type of music  
+　mgenre: types of music.
+	
+**INSTRUMENT**: the instrument   
+　iname: the name of the instrument
+
+
+**DEVELOPER**: a company that makes games.  
+　dname: name of the company.  
+　started: the time when the company was founded.  
+　location: which city the headquarter of the company is.  
+
+**ATTEND**: a relationship set that describes which PLAYER attend in which TRANSACTION, and a TRANSACTION must be attended by exactly one PLAYER.  
+
+**CONTAIN**: a relationship set that describes which GAME is contained in a pair of PLAYER and TRANSACTION, one PLAYER and TRANSACTION pair must at least has one game involved.  
+
+**WISH_LIST**: place into which PLAYER can put games they are interested in.  
+
+**KEY_PEOPLE**: representative that a DEVELOPER can have.  
+
+**NOTABLE_WORKS**: representative works that a PRODUCER can have.  
+
+**PRODUCE**: DEVELOPER produce GAME, and a GAME is produced by at least one DEVELOPER.  
+
+**DUB**: COMPOSER makes music for GAME.  
+
+**CAN_PLAY**: the INSTRUMENT the COMPOSER can play, and a composer must be able to play at least one instrument  
+
+**HAS_PERFORMED**: the MUSIC_GENRE the COMPOSER has performed, and a composer must have performed at least one instrument  
+
 
 
