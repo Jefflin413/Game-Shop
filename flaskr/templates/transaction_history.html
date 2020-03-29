@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+ <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="content">
+                <h1>Transaction History</h1>
+                <hr>
+                <div>
+      				{% for n in name_urls %}
+      					<div><a href={{n[1]}}>Transaction ID {{n[0]}}</a> timestamp: {{n[2]}}</div>
+      				{% endfor %}
+    			</div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+{% endblock %}

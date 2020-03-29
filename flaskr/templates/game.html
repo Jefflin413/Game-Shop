@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='game.css') }}">   
+
+{% block body %}
+ <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="content">
+                <h1>{{gname}}</h1>
+                <hr>
+                <p>Genre: {{genre}}</p>
+                <p>Publish Date: {{date}}</p>
+                <p>Price: {{price}}</p>
+                {% if dname %}
+                  <p>Developer: <a href={{developer_url}}>{{dname}}</a></p>
+                {% endif %}
+
+                {% if pname %}
+                  <p>Producer: <a href={{producer_url}}>{{pname}}</a></p>
+                {% endif %}
+
+                {% if cname %}
+                  <p>Composer: <a href={{composer_url}}>{{cname}}</a></p>
+                {% endif %}
+
+                <p class="att">Description: </p>
+                <div class="description">{{description}}</div>
+
+                <form action="{{ url_for('game.add_to_wishlist', gname=gname) }}" method="post" style="color: black;">
+                  <input class="danger" type="submit" value="Add to WishList" onclick="return confirm('Are you sure?');">
+                </form>
+
+                <form action="{{ url_for('game.remove_from_wishlist', gname=gname) }}" method="post" style="color: black;">
+                  <input class="danger" type="submit" value="Remove from WishList" onclick="return confirm('Are you sure?');">
+                </form>
+            </div>
+        </div>
+    </div>
+ </div>
+
+{% endblock %}
+
+<!-- {% block content %}
+{% endblock %} -->
+
+

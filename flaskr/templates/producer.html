@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block body %}
+ <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="content">
+                <h1>{{dname}}</h1>
+                <hr>
+                <p>Producer: {{pname}}</p>
+                <p>Published games:</p>
+                {% for gname, g_url in games %}
+                    <div><a href={{g_url}}>{{gname}}</a></div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+ </div>
+
+{% endblock %}

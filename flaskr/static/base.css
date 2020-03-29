@@ -1,0 +1,77 @@
+/*@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);*/
+
+body {
+    background-image: url('/static/wallpaper2you_521440.jpg');
+    background-size: cover;
+    background-position: center; 
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    font-family: "Lato";
+    color: white;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 5em;
+}
+
+.post {
+  margin-bottom: 20px;
+}
+
+div h1 {
+  color: #3498db;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+.description {
+  width: 50%;
+  margin: 0 auto;
+}
+
+
+h2 {
+  font-size: 2.0rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+button[type=button] {
+  margin: 25px 0 25px 0;
+}
+
+.danger {
+  margin: 15px 5px 5px 0;
+}
+
+.games {
+  margin: 5px 0 5px 0;
+}
+
+.content{
+  padding-top: 5%;
+  text-align: center;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+}
+
+hr {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+
